@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SIDA — Iniciar sesión</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+ 
+  <div class="bg"></div>
+ 
+  <div class="card">
+ 
+    <h1 class="welcome">Bienvenido</h1>
+ 
+    <div class="avatar-wrap">
+      <div class="avatar">
+        <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <circle cx="32" cy="22" r="13" stroke="#1D9E75" stroke-width="3.5" fill="none"/>
+          <path d="M8 58c0-13.255 10.745-24 24-24s24 10.745 24 24" stroke="#1D9E75" stroke-width="3.5" stroke-linecap="round" fill="none"/>
+        </svg>
+      </div>
+      <div class="avatar-badge" aria-hidden="true">
+        <svg viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M3.5 8.5l3 3 6-6" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </div>
+    </div>
+ 
+    <p class="username-label">Usuario</p>
+ 
+    <div class="fields">
+
+         <div class="field">
+        <label for="username">usuario:</label>
+        <input
+          type="text"
+          id="username"
+          placeholder="ingresa el usuario..."
+          autocomplete="username"
+        />
+      </div>
+ 
+      <div class="field">
+        <label for="password">contraseña:</label>
+        <input
+          type="password"
+          id="password"
+          placeholder="ingresa la contraseña..."
+          autocomplete="current-password"
+        />
+        <button class="eye-btn" type="button" aria-label="Mostrar contraseña" data-target="password">
+          <svg viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg" class="eye-icon">
+            <path d="M1 10s3.5-7 9-7 9 7 9 7-3.5 7-9 7-9-7-9-7z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+            <circle cx="10" cy="10" r="2.5" stroke="currentColor" stroke-width="1.5"/>
+          </svg>
+        </button>
+      </div>
+ 
+     
+ 
+    </div>
+ 
+    <button class="btn-login" type="button" id="loginBtn">
+      Iniciar sesión
+    </button>
+ 
+    <p class="error-msg" id="errorMsg" aria-live="polite"></p>
+ 
+  </div>
+ 
+  <script src="script.js"></script>
+</body>
+</html>

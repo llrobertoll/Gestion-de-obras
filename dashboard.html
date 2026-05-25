@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Construcción de cabaña</title>
+  <link rel="stylesheet" href="dashboard.css" />
+</head>
+<body>
+
+  <div class="shell">
+
+    <!-- ── SIDEBAR ─────────────────────────────────── -->
+    <aside class="sidebar" id="sidebar">
+
+      <div class="sb-header">
+        <button class="sb-menu" id="toggleSidebar" aria-label="Cerrar menú">
+          <span class="ham-line"></span>
+          <span class="ham-line"></span>
+          <span class="ham-line"></span>
+        </button>
+        <div class="sb-avatar" aria-label="Usuario R">R</div>
+      </div>
+
+      <nav class="sb-nav" aria-label="Navegación principal">
+
+        <p class="nav-section-label">General</p>
+
+        <a href="#" class="nav-item active" data-page="principal">
+          <img src="Imagenes/Casa.png" alt="Home" class="nav-icon" aria-hidden="true" />
+          <span>Principal</span>
+        </a>
+
+        <a href="#" class="nav-item" data-page="mensajes">
+          <img src="Imagenes/Mensajes.png" alt="Mensajes" class="nav-icon" aria-hidden="true" />
+          <span>Bandeja de Mensajes</span>
+        </a>
+
+        <div class="nav-divider"></div>
+        <p class="nav-section-label">Obra</p>
+
+        <a href="#" class="nav-item" data-page="linea">
+          <img src="Imagenes/linea de tiempo.png" alt="Línea de tiempo" class="nav-icon" aria-hidden="true" />
+          <span>Línea de tiempo de la obra</span>
+        </a>
+
+        <a href="#" class="nav-item" data-page="gastos">
+          <img src="Imagenes/Gastos.png" alt="Gastos" class="nav-icon" aria-hidden="true" />
+          <span>Gastos y Materiales de la obra</span>
+        </a>
+
+        <a href="#" class="nav-item" data-page="planos">
+          <img src="Imagenes/información.png" alt="Planos" class="nav-icon" aria-hidden="true" />
+          <span>Planos e información de la obra</span>
+        </a>
+
+        <a href="#" class="nav-item" data-page="personal">
+          <img src="Imagenes/Personal.png" alt="Personal" class="nav-icon" aria-hidden="true" />
+          <span>Información del personal de trabajo</span>
+        </a>
+
+      </nav>
+    </aside>
+
+    <!-- ── MAIN ────────────────────────────────────── -->
+    <main class="main">
+
+      <header class="topbar">
+        <h1 class="page-title">Contrución de baño</h1>
+      </header>
+
+      <div class="content" id="content-principal">
+
+        <p class="project-desc">
+          baño pequeño y funcional construido en un terreno con espacio disponible en la ubicación Apodaca, NL<br>
+          El baño incluirá:
+          WC,
+          Lavabo,
+          Regadera,
+          Ventana de ventilación,
+          Instalación hidráulica y sanitaria básica.
+        </p>
+
+        <figure class="obra-figure">
+          <!--
+            Reemplaza el src con la ruta real de tu imagen.
+            Ejemplo: src="imagenes/obra-semana3.jpg"
+          -->
+          <img
+            src="Semana3.png"
+            alt="Obra en proceso — semana 3"
+            class="obra-img"
+            onerror="this.parentElement.classList.add('img-fallback')"
+          />
+          <figcaption>23/05/2026: ultima imagen de la obra en proceso</figcaption>
+        </figure>
+
+        <section class="bitacora">
+          <h2 class="bitacora-title">Información de la semana 3:</h2>
+         <p class="bitacora-result">
+            Trabajo realizado:
+          </p>
+          <ul class="bitacora-list">
+            <li>Colado del techo</li>
+            <li>Instalación de piso y azulejo</li>
+            <li>Instalación del WC, lavabo y regadera</li>
+            <li>Pintura</li>
+            <li>Colocación de iluminación y accesorios</li>
+          </ul>
+          <p class="bitacora-result">
+            Resultado:
+          </p>
+          <p class="bitacora-result">
+            El baño queda completamente funcional y listo para usarse.
+          </p>
+        </section>
+
+      </div>
+
+    </main>
+  </div>
+
+  <script src="dashboard.js"></script>
+</body>
+</html>

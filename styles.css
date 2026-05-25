@@ -1,0 +1,234 @@
+/* ── Reset ───────────────────────────────────────────── */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+ 
+/* ── Base ────────────────────────────────────────────── */
+:root {
+  --green:        #1D9E75;
+  --green-light:  #E1F5EE;
+  --green-dark:   #0F6E56;
+  --gray-border:  #c8cdd6;
+  --gray-text:    #6b7280;
+  --placeholder:  #b0b7c3;
+  --bg-page:      #e8f3f8;
+  --white:        #ffffff;
+  --radius-card:  28px;
+  --radius-field: 999px;
+  --font:         'Segoe UI', system-ui, sans-serif;
+}
+ 
+html, body {
+  height: 100%;
+}
+ 
+body {
+  font-family: var(--font);
+  background: var(--bg-page);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  padding: 1.5rem;
+}
+ 
+/* ── Subtle background dots ──────────────────────────── */
+.bg {
+  position: fixed;
+  inset: 0;
+  background-image: radial-gradient(circle, #b8d8e8 1px, transparent 1px);
+  background-size: 28px 28px;
+  opacity: 0.35;
+  pointer-events: none;
+  z-index: 0;
+}
+ 
+/* ── Card ────────────────────────────────────────────── */
+.card {
+  position: relative;
+  z-index: 1;
+  background: var(--white);
+  border-radius: var(--radius-card);
+  padding: 2.4rem 2.4rem 2rem;
+  width: 100%;
+  max-width: 400px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0;
+  animation: cardIn 0.45s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+ 
+@keyframes cardIn {
+  from { opacity: 0; transform: translateY(18px) scale(0.97); }
+  to   { opacity: 1; transform: translateY(0)    scale(1);    }
+}
+ 
+/* ── "Bienvenido" heading ────────────────────────────── */
+.welcome {
+  font-size: 1.6rem;
+  font-weight: 600;
+  color: #1a1a2e;
+  letter-spacing: -0.3px;
+  margin-bottom: 1.4rem;
+}
+ 
+/* ── Avatar ──────────────────────────────────────────── */
+.avatar-wrap {
+  position: relative;
+  margin-bottom: 0.75rem;
+}
+ 
+.avatar {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  background: var(--green-light);
+  border: 3px solid var(--green);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: avatarPop 0.5s 0.15s cubic-bezier(0.34, 1.56, 0.64, 1) both;
+}
+ 
+@keyframes avatarPop {
+  from { transform: scale(0.7); opacity: 0; }
+  to   { transform: scale(1);   opacity: 1; }
+}
+ 
+.avatar svg {
+  width: 56px;
+  height: 56px;
+}
+ 
+.avatar-badge {
+  position: absolute;
+  bottom: 4px;
+  right: 4px;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background: var(--green);
+  border: 2.5px solid var(--white);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+ 
+.avatar-badge svg {
+  width: 14px;
+  height: 14px;
+}
+ 
+/* ── Username label ──────────────────────────────────── */
+.username-label {
+  font-size: 0.95rem;
+  color: #374151;
+  font-weight: 400;
+  padding-bottom: 4px;
+  border-bottom: 1.5px solid #d1d5db;
+  margin-bottom: 2rem;
+  letter-spacing: 0.2px;
+}
+ 
+/* ── Fields ──────────────────────────────────────────── */
+.fields {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+  margin-bottom: 1.4rem;
+}
+ 
+.field {
+  position: relative;
+  display: flex;
+  align-items: center;
+  border: 2px solid var(--gray-border);
+  border-radius: var(--radius-field);
+  padding: 0 1.1rem;
+  height: 48px;
+  background: var(--white);
+  transition: border-color 0.2s;
+}
+ 
+.field:focus-within {
+  border-color: var(--green);
+}
+ 
+.field label {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #374151;
+  white-space: nowrap;
+  margin-right: 0.5rem;
+  flex-shrink: 0;
+  cursor: default;
+  user-select: none;
+}
+ 
+.field input {
+  flex: 1;
+  border: none;
+  outline: none;
+  font-size: 0.88rem;
+  color: #1a1a2e;
+  background: transparent;
+  font-family: var(--font);
+}
+ 
+.field input::placeholder {
+  color: var(--placeholder);
+}
+ 
+/* eye toggle */
+.eye-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  color: var(--placeholder);
+  flex-shrink: 0;
+  transition: color 0.15s;
+}
+ 
+.eye-btn:hover { color: var(--green); }
+ 
+.eye-icon { width: 18px; height: 18px; }
+ 
+/* ── Login button ────────────────────────────────────── */
+.btn-login {
+  width: 100%;
+  height: 48px;
+  border-radius: var(--radius-field);
+  background: var(--green);
+  color: var(--white);
+  font-size: 0.97rem;
+  font-weight: 600;
+  border: none;
+  cursor: pointer;
+  letter-spacing: 0.3px;
+  transition: background 0.2s, transform 0.1s;
+}
+ 
+.btn-login:hover  { background: var(--green-dark); }
+.btn-login:active { transform: scale(0.98); }
+ 
+/* ── Error message ───────────────────────────────────── */
+.error-msg {
+  margin-top: 0.75rem;
+  font-size: 0.82rem;
+  color: #dc2626;
+  min-height: 1.1rem;
+  text-align: center;
+}
+ 
+/* ── Responsive ──────────────────────────────────────── */
+@media (max-width: 420px) {
+  .card { padding: 2rem 1.4rem 1.6rem; }
+  .welcome { font-size: 1.35rem; }
+}
